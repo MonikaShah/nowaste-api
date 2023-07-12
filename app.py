@@ -88,12 +88,12 @@ def get_data():
         return jsonify({'error': str(e)}), 500
 
     # Convert the result to a list of dictionaries
+    # Convert the result to a list of dictionaries
     data = []
     for row in result:
-        row_dict = dict(row)
+        row_dict = row._asdict()
         row_dict['date'] = row_dict['date'].strftime('%Y-%m-%d')
-        # Convert population to string
-        row_dict['population'] = str(row_dict['population'])
+        row_dict['population'] = str(row_dict['population'])  # Convert population to string
         data.append(row_dict)
 
     # Check if data is empty
