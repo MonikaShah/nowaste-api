@@ -2,6 +2,7 @@ from flask_cors import CORS
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from flask import Flask, request, jsonify, abort
+from sqlalchemy import text
 
 app = Flask(__name__)
 CORS(app)
@@ -12,6 +13,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://divyang:CIFdVN48INeZ7K10wx
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
+
 
 @app.route('/', methods=['GET'])
 def home():
@@ -78,9 +80,10 @@ def get_data():
         query += " AND parent_id = :parent_id"
         params['parent_id'] = parent_id
 
+
     # Execute the query
     try:
-        result = db.session.execute(query, params)
+        result = db.session.execute(text(query), params)
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
@@ -89,7 +92,8 @@ def get_data():
     for row in result:
         row_dict = dict(row)
         row_dict['date'] = row_dict['date'].strftime('%Y-%m-%d')
-        row_dict['population'] = str(row_dict['population'])  # Convert population to string
+        # Convert population to string
+        row_dict['population'] = str(row_dict['population'])
         data.append(row_dict)
 
     # Check if data is empty
