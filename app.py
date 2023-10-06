@@ -8,8 +8,8 @@ app = Flask(__name__)
 CORS(app)
 
 # Configure your database connection here
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:admin@localhost/nowaste'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://divyang:CIFdVN48INeZ7K10wxvz4ZXWsMGIIFxi@dpg-cimohap5rnurtfcrk9kg-a.singapore-postgres.render.com/nowaste'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost/mumbai61'
+# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://divyang:CIFdVN48INeZ7K10wxvz4ZXWsMGIIFxi@dpg-cimohap5rnurtfcrk9kg-a.singapore-postgres.render.com/nowaste'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
