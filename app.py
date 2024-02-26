@@ -11,8 +11,8 @@ CORS(app)
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:postgres@localhost/mumbai61'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://divyang:CIFdVN48INeZ7K10wxvz4ZXWsMGIIFxi@dpg-cimohap5rnurtfcrk9kg-a.singapore-postgres.render.com/nowaste'
 # app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://nowastes_user:JvWRNk5jsWfWTAsSOM1GTe4zOBUq53NA@dpg-cna4grf109ks73a0f320-a.oregon-postgres.render.com/nowastes'
-# app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://nowastes_user:JvWRNk5jsWfWTAsSOM1GTe4zOBUq53NA@dpg-cna4grf109ks73a0f320-a.oregon-postgres.render.com/nowastes'
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://nowastes_user:JvWRNk5jsWfWTAsSOM1GTe4zOBUq53NA@dpg-cna4grf109ks73a0f320-a/nowastes'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://nowastes_user:JvWRNk5jsWfWTAsSOM1GTe4zOBUq53NA@dpg-cna4grf109ks73a0f320-a.oregon-postgres.render.com/nowastes'
+#app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://nowastes_user:JvWRNk5jsWfWTAsSOM1GTe4zOBUq53NA@dpg-cna4grf109ks73a0f320-a/nowastes'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
